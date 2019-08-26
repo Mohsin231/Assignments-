@@ -1,4 +1,6 @@
 #Write your game of chance functions here
+#You will work to write several functions that simulate games of chance. 
+#Each one of these functions will use a number of parameters, random number generation, conditionals, and return statements.
 import random
 
 total = 100
