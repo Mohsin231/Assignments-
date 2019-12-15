@@ -58,3 +58,63 @@ function scissors_choice() {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+//another way
+
+const getUserChoice=userInput=>{
+  userInput=userInput.toLowerCase();
+  if(userInput==="rock"||userInput==="siccors"||userInput==="rock"||userInput==="bomb"){
+return userInput;}
+  else{return console.log("Choose a valid input")}
+};
+
+const getComputerChoice=()=>{
+  const comp=Math.floor(Math.random()*3);
+  if(comp==0){return "rock";}
+  else if(comp==1){return "paper";}
+  else{return "scissors"}
+  
+  
+}
+const determineWinner=(userChoice,computerChoice)=>{
+  if (userChoice===computerChoice){
+    return "Tie!";
+  }
+  if(userChoice==="bomb"){
+    return "You won";
+  }
+  if(userChoice==="rock"){
+    if(computerChoice==="paper"){
+      return "computer wins";}
+    else{return "you won";}
+  }
+  
+  if(userChoice==="paper"){
+    if(computerChoice==="scissors"){
+      return "computer wins";}
+    else {return "you won";}
+    }
+  
+  if(userChoice==="scissors"){
+    if(computerChoice==="rock"){
+      return "computer wins";}
+    else{return "you won";}
+    }
+  }
+
+const playGame=()=>{
+  let userChoice=getUserChoice("bomb");
+  let computerChoice=getComputerChoice("paper");
+  return determineWinner(userChoice,computerChoice);
+}
+
+console.log(playGame());
